@@ -16,7 +16,8 @@ triple(4)
 # takes two parameters and returns the result of
 # the second value subtracted from the first.
 #
-
+def subtract(x,y):
+    return y-x
 
 # 3)
 # Create a function called "dictionary_maker"
@@ -29,7 +30,12 @@ triple(4)
 # For example, if given: [('foo', 1), ('bar', 3)]
 # it should return {'foo': 1, 'bar': 3}
 
+def dictionary_maker(a):  #a should be a list of 2-tuples
+    d = dict((k, l) for l, k in a)
+    return print(d)
 
+dictionary_maker([(1,"a"),(2,"b"),(3,"c")])
+    
 
 ############################################
 #
