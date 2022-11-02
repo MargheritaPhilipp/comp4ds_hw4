@@ -5,7 +5,11 @@
 # the value of x multiplied
 # by three.
 #
+def triple(x):
+    y = x*3
+    return print(y)
 
+triple(4)
 
 # 2)
 # Create a function named "subtract" that
