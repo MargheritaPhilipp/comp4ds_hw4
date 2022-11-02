@@ -9,6 +9,7 @@ def triple(x):
     y = x*3
     return print(y)
 
+#test if function works
 triple(4)
 
 # 2)
@@ -29,6 +30,12 @@ triple(4)
 # For example, if given: [('foo', 1), ('bar', 3)]
 # it should return {'foo': 1, 'bar': 3}
 
+def dictionary_maker(a):  #a should be a list of 2-tuples
+    d = dict((k, l) for k, l in a)
+    return print(d)
+
+#test if function works
+dictionary_maker([(1,"a"),(2,"b"),(3,"c")])
 
 
 ############################################
@@ -57,6 +64,17 @@ triple(4)
 # representing the usernames of every user that
 # has worked as job_title.
 
+CV=  [{'user': 'john', 'jobs': ['analyst', 'engineer']}, {'user': 'jane', 'jobs': ['analyst','finance', 'software']}]
+
+def has_experience_as(cvlist:list,job_title:str) -> list: 
+    # users
+    users=[]
+    for i in cvlist:
+        for j in i['jobs'] :
+            if j==job_title:
+                users.append(i['user'])
+    return users
+print(has_experience_as(CV,'analyst'))
 
 
 #
@@ -68,6 +86,23 @@ triple(4)
 # are the number of users that have done
 # that job.
 
+def count_occurance(cvlist:list) -> dict: 
+    all_jobs=set()
+    for i in cvlist:
+        for j in i["jobs"]:
+            all_jobs.add(j)
+    dict={}
+    for i in all_jobs:
+        dict[i]= len(has_experience_as(cvlist, i))
+    return dict
+
+
+#check if function works
+CV2=  [{'user': 'john', 'jobs': ['analyst', 'engineer']},
+        {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
+         {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
+
+count_occurance(CV2)
 
 
 #
