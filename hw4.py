@@ -115,6 +115,8 @@ dictionary_maker([(1,"a"),(2,"b"),(3,"c")])
 # The function should return the total number of cases
 # registered so far in that country
 
+def total_registered_cases(data, country): 
+    return(sum(data[country]))
 
 # 8)
 # Create a function called "total_registered_cases_per_country"
