@@ -17,7 +17,8 @@ triple(4)
 # takes two parameters and returns the result of
 # the second value subtracted from the first.
 #
-
+def subtract(x,y):
+    return y-x
 
 # 3)
 # Create a function called "dictionary_maker"
@@ -37,6 +38,9 @@ def dictionary_maker(a):  #a should be a list of 2-tuples
 #test if function works
 dictionary_maker([(1,"a"),(2,"b"),(3,"c")])
 
+
+dictionary_maker([(1,"a"),(2,"b"),(3,"c")])
+    
 
 ############################################
 #
@@ -144,6 +148,8 @@ count_occurance(CV2)
 # The function should return the total number of cases
 # registered so far in that country
 
+def total_registered_cases(data, country): 
+    return(sum(data[country]))
 
 # 8)
 # Create a function called "total_registered_cases_per_country"
@@ -154,6 +160,9 @@ count_occurance(CV2)
 # per each country and as value the total number of cases
 # registered so far that the country had
 #
+def total_registered_cases_per_country(data):
+    for k in data.keys():
+        print(str(k) + ": " + str(sum(data.get(k))))
 
 
 # 9)
