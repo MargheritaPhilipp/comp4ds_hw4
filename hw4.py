@@ -127,6 +127,9 @@ def total_registered_cases(data, country):
 # per each country and as value the total number of cases
 # registered so far that the country had
 #
+def total_registered_cases_per_country(data):
+    for k in data.keys():
+        print(str(k) + ": " + str(sum(data.get(k))))
 
 
 # 9)
