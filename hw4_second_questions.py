@@ -26,7 +26,6 @@ def has_experience_as(cvlist:list,job_title:str) -> list:
             if j==job_title:
                 users.append(i['user'])
     return users
-print(has_experience_as(CV,'analyst'))
 
 
 #
