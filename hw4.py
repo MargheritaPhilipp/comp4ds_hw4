@@ -90,7 +90,7 @@ print(has_experience_as(CV,'analyst'))
 # are the number of users that have done
 # that job.
 
-def count_occurance(cvlist:list) -> dict: 
+def job_counts(cvlist:list) -> dict: 
     all_jobs=set()
     for i in cvlist:
         for j in i["jobs"]:
@@ -106,7 +106,7 @@ CV2=  [{'user': 'john', 'jobs': ['analyst', 'engineer']},
         {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
          {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
 
-count_occurance(CV2)
+print(job_counts(CV2))
 
 
 #
@@ -123,6 +123,10 @@ count_occurance(CV2)
 # HINT: You can use the method '.items' on
 # dictionaries to iterate over them like a
 # list of tuples.
+def most_popular_job(CV_list:list) -> tuple:
+    jobfreq=job_counts(CV_list)
+    return max(jobfreq,key=lambda x: jobfreq[x])
+print(most_popular_job(CV2))
 
 
 
