@@ -19,10 +19,10 @@ Created on Mon Nov  7 12:40:56 2022
 # the length of the lists can differ)
 
 # Dictionay created to test the functions
-Weekly_Cases = [{'Spain': [4, 8, 2, 0, 1],
+Weekly_Cases = {'Spain': [4, 8, 2, 0, 1],
                   'France': [2, 3, 6],
-                  'Italy': [6, 8, 1, 7]}]
-                 # 'Germany': [1, 2, 4, 8, 16]}]
+                  'Italy': [6, 8, 1, 7],
+                  'Germany': [1, 2, 4, 8, 16]}
 
 # 7)
 # Create a function called "total_registered_cases"
@@ -34,10 +34,16 @@ Weekly_Cases = [{'Spain': [4, 8, 2, 0, 1],
 # registered so far in that country
 
 def total_registered_cases(data, country): 
-    return(sum(data[country]))
+    return sum(data[country])
 
 #check if function works
-total_registered_cases(Weekly_Cases,'France' )
+total_registered_cases(Weekly_Cases,'Spain')
+
+#Not sure if there is a way of inputting the country withuot quotation marks
+# i.e. replacing the str() with something that puts what's insie in ""
+#def total_registered_cases(data, country): 
+    #print(sum(data[str(country)]))
+#total_registered_cases(Weekly_Cases, Spain)
 
 # 8)
 # Create a function called "total_registered_cases_per_country"
@@ -55,7 +61,6 @@ def total_registered_cases_per_country(data):
 #check if function works
 total_registered_cases_per_country(Weekly_Cases)
 
-
 # 9)
 # Create a function called "country_with_most_cases"
 # that has 1 parameter:
@@ -64,3 +69,11 @@ total_registered_cases_per_country(Weekly_Cases)
 # The function should return the country with the
 # greatest total amount of cases
 
+def country_with_most_cases(data):
+    totals = {}
+    for i in data:
+        totals[i]= sum(data.get(i))
+    return max(totals, key=totals.get)
+    
+#check if function works
+country_with_most_cases(Weekly_Cases)
