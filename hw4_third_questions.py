@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov  7 12:40:56 2022
-
-@author: MargheritaP
-"""
-
 ##############
 
 # Now imagine you have a certain data structure that
@@ -33,7 +25,7 @@ Weekly_Cases = {'Spain': [4, 8, 2, 0, 1],
 # The function should return the total number of cases
 # registered so far in that country
 
-def total_registered_cases(data, country): 
+def total_registered_cases(data:dict, country:str) -> int: 
     return sum(data[country])
 
 #check if function works
@@ -54,7 +46,7 @@ total_registered_cases(Weekly_Cases,'Spain')
 # per each country and as value the total number of cases
 # registered so far that the country had
 #
-def total_registered_cases_per_country(data):
+def total_registered_cases_per_country(data:dict) -> str:
     for k in data.keys():
         print(str(k) + ": " + str(sum(data.get(k))))
 
@@ -69,7 +61,7 @@ total_registered_cases_per_country(Weekly_Cases)
 # The function should return the country with the
 # greatest total amount of cases
 
-def country_with_most_cases(data):
+def country_with_most_cases(data:dict) -> str:
     totals = {}
     for i in data:
         totals[i]= sum(data.get(i))

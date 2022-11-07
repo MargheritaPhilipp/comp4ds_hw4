@@ -6,6 +6,23 @@ Created on Mon Nov  7 12:35:41 2022
 @author: MargheritaP
 """
 
+#
+# Now, imagine you are given data from a website that
+# has people's CVs. The data comes
+# as a list of dictionaries and each
+# dictionary looks like this:
+#
+# { 'user': 'george', 'jobs': ['bar', 'baz', 'qux']}
+# e.g. [{'user': 'john', 'jobs': ['analyst', 'engineer']},
+#       {'user': 'jane', 'jobs': ['finance', 'software']}]
+# we will refer to this as a "CV".
+#
+
+# Dictionaty created for testing the functions:
+CV= [{'user': 'john', 'jobs': ['analyst', 'engineer']},
+        {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
+         {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
+
 
 #
 # 4)
@@ -26,6 +43,11 @@ def has_experience_as(cvlist:list,job_title:str) -> list:
             if j==job_title:
                 users.append(i['user'])
     return users
+
+
+#check if function works
+print(has_experience_as(CV,'analyst'))
+
 
 
 #
