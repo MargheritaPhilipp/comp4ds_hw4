@@ -19,7 +19,10 @@ Created on Mon Nov  7 12:35:41 2022
 # we will refer to this as a "CV".
 #
 
-
+# Dictionaty created for testing the functions:
+CV=  [{'user': 'john', 'jobs': ['analyst', 'engineer']},
+        {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
+         {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
 
 #
 # 4)
@@ -31,8 +34,6 @@ Created on Mon Nov  7 12:35:41 2022
 # The function should return a list of strings
 # representing the usernames of every user that
 # has worked as job_title.
-
-CV=  [{'user': 'john', 'jobs': ['analyst', 'engineer']}, {'user': 'jane', 'jobs': ['analyst','finance', 'software']}]
 
 def has_experience_as(cvlist:list,job_title:str) -> list: 
     # users
@@ -66,11 +67,7 @@ def count_occurance(cvlist:list) -> dict:
 
 
 #check if function works
-CV2=  [{'user': 'john', 'jobs': ['analyst', 'engineer']},
-        {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
-         {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
-
-count_occurance(CV2)
+count_occurance(CV)
 
 
 #
