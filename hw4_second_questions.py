@@ -20,7 +20,7 @@ Created on Mon Nov  7 12:35:41 2022
 #
 
 # Dictionaty created for testing the functions:
-CV=  [{'user': 'john', 'jobs': ['analyst', 'engineer']},
+CV= [{'user': 'john', 'jobs': ['analyst', 'engineer']},
         {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
          {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
 
@@ -43,6 +43,8 @@ def has_experience_as(cvlist:list,job_title:str) -> list:
             if j==job_title:
                 users.append(i['user'])
     return users
+
+#check if function works
 print(has_experience_as(CV,'analyst'))
 
 
