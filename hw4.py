@@ -18,7 +18,7 @@ triple(4)
 # the second value subtracted from the first.
 #
 def subtract(x,y):
-    return y-x
+    return x-y
 
 # 3)
 # Create a function called "dictionary_maker"
