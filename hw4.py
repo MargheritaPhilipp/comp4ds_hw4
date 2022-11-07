@@ -125,7 +125,8 @@ print(job_counts(CV2))
 # list of tuples.
 def most_popular_job(CV_list:list) -> tuple:
     jobfreq=job_counts(CV_list)
-    return max(jobfreq,key=lambda x: jobfreq[x])
+    maxjob=max(jobfreq,key=lambda x: jobfreq[x])
+    return (maxjob,jobfreq[maxjob])
 print(most_popular_job(CV2))
 
 

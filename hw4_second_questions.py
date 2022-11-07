@@ -6,23 +6,6 @@ Created on Mon Nov  7 12:35:41 2022
 @author: MargheritaP
 """
 
-############################################
-#
-# Now, imagine you are given data from a website that
-# has people's CVs. The data comes
-# as a list of dictionaries and each
-# dictionary looks like this:
-#
-# { 'user': 'george', 'jobs': ['bar', 'baz', 'qux']}
-# e.g. [{'user': 'john', 'jobs': ['analyst', 'engineer']},
-#       {'user': 'jane', 'jobs': ['finance', 'software']}]
-# we will refer to this as a "CV".
-#
-
-# Dictionaty created for testing the functions:
-CV=  [{'user': 'john', 'jobs': ['analyst', 'engineer']},
-        {'user': 'jane', 'jobs': ['analyst','finance', 'software']},
-         {'user': 'davis', 'jobs': ['analyst','engineer', 'software']}]
 
 #
 # 4)
@@ -55,7 +38,7 @@ print(has_experience_as(CV,'analyst'))
 # are the number of users that have done
 # that job.
 
-def count_occurance(cvlist:list) -> dict: 
+def job_counts(cvlist:list) -> dict: 
     all_jobs=set()
     for i in cvlist:
         for j in i["jobs"]:
@@ -67,7 +50,6 @@ def count_occurance(cvlist:list) -> dict:
 
 
 #check if function works
-count_occurance(CV)
 
 
 #
@@ -84,5 +66,9 @@ count_occurance(CV)
 # HINT: You can use the method '.items' on
 # dictionaries to iterate over them like a
 # list of tuples.
+def most_popular_job(CV_list:list) -> tuple:
+    jobfreq=job_counts(CV_list)
+    maxjob=max(jobfreq,key=lambda x: jobfreq[x])
+    return (maxjob,jobfreq[maxjob])
 
 
