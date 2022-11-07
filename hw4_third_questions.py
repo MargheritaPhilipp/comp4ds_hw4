@@ -46,9 +46,11 @@ total_registered_cases(Weekly_Cases,'Spain')
 # per each country and as value the total number of cases
 # registered so far that the country had
 #
-def total_registered_cases_per_country(data:dict) -> str:
-    for k in data.keys():
-        print(str(k) + ": " + str(sum(data.get(k))))
+def total_registered_cases_per_country(data:dict) -> dict:
+    totals = {}
+    for i in data:
+        totals[i]= sum(data.get(i))
+    return totals
 
 #check if function works
 total_registered_cases_per_country(Weekly_Cases)
@@ -61,11 +63,14 @@ total_registered_cases_per_country(Weekly_Cases)
 # The function should return the country with the
 # greatest total amount of cases
 
+#def country_with_most_cases(data:dict) -> str:
+#    totals = {}
+#    for i in data:
+#        totals[i]= sum(data.get(i))
+#    return max(totals, key=totals.get)
+  
 def country_with_most_cases(data:dict) -> str:
-    totals = {}
-    for i in data:
-        totals[i]= sum(data.get(i))
-    return max(totals, key=totals.get)
-    
+    return max(data, key=lambda x : sum(data[x]))
+
 #check if function works
 country_with_most_cases(Weekly_Cases)
