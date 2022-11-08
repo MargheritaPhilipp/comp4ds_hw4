@@ -19,19 +19,18 @@ Created on Mon Nov  7 12:43:25 2022
 # #
 
 import pandas as pd
-
-covid = pd.read_csv("Documentos/hw4/git_repo/comp4ds_hw4/covid.csv")
+path="/home/djtom/bse/computingds/hw4/comp4ds_hw4/covid.csv"
+covid = pd.read_csv(path)
 
 def print_selection(data, active_cases):
     filtered_data = data[data.Active > active_cases].copy()
     filtered_data["ratio"]= filtered_data["Deaths"]/filtered_data["Confirmed"]
     average_ratio = filtered_data["ratio"].mean()
 
-    print("The countries with more than " + str(active_cases) +
-          " active cases are: " + str(filtered_data["Country"].tolist()))
-    print("The average of deaths over confirmed cases among those countries is " +
-          str(round(average_ratio, 3)))
-    print(" ") # Including this so there is an empty space when looping prints
+    print(f"\n The countries with more than {active_cases} \
+active cases are: {', '.join(filtered_data['Country'].tolist())} \n \
+The average of deaths over confirmed cases among these countries is \
+{round(average_ratio, 3)}\n")
 
 cases = [500, 1000, 5000]
 
