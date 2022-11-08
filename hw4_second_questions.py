@@ -39,9 +39,8 @@ def has_experience_as(cvlist:list,job_title:str) -> list:
     # users
     users=[]
     for i in cvlist:
-        for j in i['jobs'] :
-            if j==job_title:
-                users.append(i['user'])
+        if job_title in i['jobs'] :
+            users.append(i['user'])
     return users
 
 
