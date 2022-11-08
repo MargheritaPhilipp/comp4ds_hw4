@@ -19,19 +19,22 @@ Created on Mon Nov  7 12:43:25 2022
 # #
 import os
 import pandas as pd
+dir = os.path.dirname(os.path.realpath(__file__))
+# dir_path=os.path.realpath(__file__)
+# pwd=os.getcwd()
+path1=dir+'/covid.csv'
+path2 = dir+'/data/covid.csv'
+# print(path1,path2)
+try:
+      covid = pd.read_csv(path1)
+except:
 
-os.getcwd()
-path = '/data'
+      covid = pd.read_csv(path2)
+
 # ideally we just want to specify the path from the github working directory
 # where the csv file is in the folder called data that falls under gitignore
 
-path = '/Users/MargheritaP/Documents/GitHub/comp4ds_hw4/data/covid.csv'
-#path="/home/djtom/bse/computingds/hw4/comp4ds_hw4/covid.csv"
-#path="/... for Daniela"
 
-covid = pd.read_csv("covid.csv")
-
-covid.head()
 
 def print_selection(data, active_cases):
     filtered_data = data[data.Active > active_cases].copy()
